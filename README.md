@@ -37,5 +37,5 @@ mvn test
 ```
 
 ### Benchmark
-Bear in mind that although this implementation is thread-safe, the performance actually degrades with more than 4 threads.
+Although this implementation is thread-safe, the performance degrades with more than 4 threads.
 According to the profiler, this is mostly due to lock contention.
