@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console appender for general output -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    
+    <Loggers>
+        <!-- Root logger - set to WARN to minimize performance impact -->
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+        
+        <!-- Application loggers with different levels for different components -->
+        <Logger name="io.github.mjagos0" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!-- Debug logging for BTree operations (can be enabled for debugging) -->
+        <Logger name="io.github.mjagos0.ConcurrentBTree" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <Logger name="io.github.mjagos0.BTreeNode" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!-- Main class can have INFO level for important messages -->
+        <Logger name="io.github.mjagos0.Main" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+    </Loggers>
+</Configuration>
